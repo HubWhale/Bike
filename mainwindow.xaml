@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="Bike.MainWindow" Name="Icon" Title="UH Fitness Software" Height="680" WindowStartupLocation="CenterScreen" MaxHeight="680" MinHeight="680" Width="1000" MaxWidth="1000" MinWidth="1000" ResizeMode="CanMinimize" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" WindowStyle="None" BorderBrush="#FFD3D3D3" BorderThickness="1" Visibility="{Binding WinVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Closed="Window_Closed" KeyUp="Window_KeyUp" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.Background>
+            <ImageBrush ImageSource="Images/background1.png" />
+    </Grid.Background>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="35" />
+      <RowDefinition Height="10" />
+      <RowDefinition Height="645" />
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0" MouseMove="TitleBar_MouseMove">
+      <Grid.Background>
+        <ImageBrush ImageSource="Images\SB1.png" />
+      </Grid.Background>
+      <StackPanel Orientation="Horizontal" Margin="6,0,0,0">
+        <Image Name="Title" Source="" Width="115" Height="30" Stretch="Fill" />
+      </StackPanel>
+      <Button Name="Cloce_button" HorizontalAlignment="Left" Margin="970,5,0,0" Width="25" Height="25" FontSize="25" Foreground="#FFFFFFFF" BorderThickness="0" VerticalAlignment="Top" Click="button_Click">
+        <Button.Background>
+          <ImageBrush ImageSource="/Bike;component/Images/x3.0.png" Stretch="Fill" />
+        </Button.Background>
+        <Button.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Control.Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Border Background="{TemplateBinding Control.Background}">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                  </Border>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </Button.Style>
+      </Button>
+      <Button Name="Min_button" HorizontalAlignment="Left" Margin="943,5,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="28" Foreground="#FFFFFFFF" BorderThickness="0" Click="Min_button_Click">
+        <Button.Background>
+          <ImageBrush ImageSource="/Bike;component/Images/_3.0.png" />
+        </Button.Background>
+        <Button.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Control.Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Border Background="{TemplateBinding Control.Background}">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                  </Border>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </Button.Style>
+      </Button>
+    </Grid>
+    <Grid Grid.Row="1">
+      <Grid.Background>
+        <ImageBrush ImageSource="/Bike;component/Images/blue.png" />
+      </Grid.Background>
+    </Grid>
+    <Grid Grid.Row="2" Background="#FF000000">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="1" />
+        <ColumnDefinition Width="830" MinWidth="830" MaxWidth="830" />
+      </Grid.ColumnDefinitions>
+      <Grid Grid.Column="1" Background="#FF808080" />
+      <Grid Name="LeftPane" Grid.Column="0" Margin="0,0,0,10">
+        <Grid.Background>
+          <ImageBrush ImageSource="/Bike;component/Images/ZB1.jpg" Stretch="Fill" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="169" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="150" />
+          <RowDefinition Height="85" />
+          <RowDefinition Height="5" />
+          <RowDefinition Height="85" />
+          <RowDefinition Height="5" />
+          <RowDefinition Height="85" />
+          <RowDefinition Height="5" />
+          <RowDefinition Height="85" />
+          <RowDefinition Height="5" />
+          <RowDefinition Height="85" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Grid.ColumnSpan="2" Grid.RowSpan="2">
+          <Button Name="rejister" Width="169" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Click="rejister_Click">
+            <Button.Style>
+              <Style TargetType="{x:Type Button}">
+                <Setter Property="Control.Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                      <Border Background="{TemplateBinding Control.Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </Button.Style>
+            <StackPanel Orientation="Vertical">
+              <Image Name="rejister_ico" Source="Images/dl1.png" Width="100" Height="100" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" />
+              <TextBlock Name="rejister_t" Style="{StaticResource ButtonTextStyle}" Text="Rejister" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.TextAlignment="Center" />
+            </StackPanel>
+          </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2" Grid.RowSpan="2">
+          <Button Name="devices" Style="{StaticResource LeftButtonStyle}" Height="85" Width="Auto" Click="devices_Click">
+            <Button.Background>
+              <ImageBrush x:Name="devices_bg" ImageSource="{x:Null}" />
+            </Button.Background>
+            <StackPanel Orientation="Horizontal" Width="140">
+              <Image Name="devices_ico" Source="Images/device1.png" Width="70" Height="60" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" Stretch="UniformToFill" />
+              <TextBlock Name="devices_t" Style="{StaticResource ButtonTextStyle}" Width="80" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7">
+                <Run Text="Devices" />
+              </TextBlock>
+            </StackPanel>
+          </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Vertical" Grid.ColumnSpan="2" Grid.RowSpan="2">
+          <Button Name="records" Style="{StaticResource LeftButtonStyle}" Height="85" Width="Auto" Click="records_Click">
+            <Button.Background>
+              <ImageBrush x:Name="records_bg" ImageSource="{x:Null}" />
+            </Button.Background>
+            <StackPanel Orientation="Horizontal" Width="140">
+              <Image Name="records_ico" Source="Images/record1.png" Width="70" Height="60" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" Stretch="UniformToFill" />
+              <TextBlock Name="records_t" Style="{StaticResource ButtonTextStyle}" Width="81" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7">
+                <Run Text="Records" />
+              </TextBlock>
+            </StackPanel>
+          </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Vertical" Grid.ColumnSpan="2">
+          <Button Name="normal" Style="{StaticResource LeftButtonStyle}" Height="85" Width="Auto" Click="normal_Click">
+            <Button.Background>
+              <ImageBrush x:Name="normal_bg" ImageSource="{x:Null}" />
+            </Button.Background>
+            <StackPanel Orientation="Horizontal" Width="140">
+              <Image Name="normal_ico" Source="Images/noraml%20(2).png" Width="70" Height="60" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" Stretch="UniformToFill" />
+              <TextBlock Name="normal_t" Style="{StaticResource ButtonTextStyle}" Width="80" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7">Normal</TextBlock>
+            </StackPanel>
+          </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="7" Orientation="Vertical" Grid.ColumnSpan="2">
+          <Button Name="video" Style="{StaticResource LeftButtonStyle}" Height="85" Width="Auto" Click="video_Click">
+            <Button.Background>
+              <ImageBrush x:Name="video_bg" ImageSource="{x:Null}" />
+            </Button.Background>
+            <StackPanel Orientation="Horizontal" Width="140">
+              <Image Name="video_ico" Source="Images/video (2)1.png" Width="70" Height="60" Stretch="UniformToFill" />
+              <TextBlock Name="video_t" Style="{StaticResource ButtonTextStyle}" Width="80" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7">Video</TextBlock>
+            </StackPanel>
+          </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="9" Orientation="Vertical" Grid.ColumnSpan="2">
+          <Button Name="unity3D" Style="{StaticResource LeftButtonStyle}" Height="85" Margin="0,0,0,0" Width="Auto" Visibility="Collapsed" Click="unity3D_Click">
+            <Button.Background>
+              <ImageBrush x:Name="unity3D_bg" ImageSource="{x:Null}" />
+            </Button.Background>
+            <StackPanel Orientation="Horizontal" Width="140">
+              <Image Name="unity3D_ico" Source="Images/UNITY3D.png" Width="60" Height="41" Stretch="Uniform" />
+              <TextBlock Name="unity3D_t" Style="{StaticResource ButtonTextStyle}" Width="80" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7">
+                <Run Text="Unity3D" />
+              </TextBlock>
+            </StackPanel>
+          </Button>
+        </StackPanel>
+      </Grid>
+      <Frame Name="rootFrame" NavigationUIVisibility="Hidden" Grid.Column="2" Background="#FFFFFFFF" MinWidth="830" MaxWidth="830" Source="/Bike;component/Other/RejisterPage.xaml" Opacity="1" Margin="0,0,0,10" />
+    </Grid>
+  </Grid>
+</Window>

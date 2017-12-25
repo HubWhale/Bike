@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Bike.Other.RecordPage" Title="RecordPage" Unloaded="Page_Unloaded" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.Background>
+      <ImageBrush ImageSource="/Bike;component/Images/background2.jpg" Stretch="Fill" />
+    </Grid.Background>
+    <TabControl Name="tabControl" Height="586" Margin="12,17,0,0" Opacity="0.8" HorizontalAlignment="Left" Width="804" BorderThickness="0" Background="{x:Null}">
+      <TabItem Header=" 记 录 " FontFamily="Microsoft YaHei UI" FontSize="15.5" Visibility="Collapsed">
+        <Grid>
+          <ListView Name="listView" ItemContainerStyle="{StaticResource ListViewItemStyle}" HorizontalAlignment="Left" Height="576" Margin="0,3,0,0" VerticalAlignment="Top" Width="800" Background="#FF000000" Opacity="0.7" FontFamily="Microsoft YaHei UI" FontSize="15.7" Foreground="#FF1EADFA" ItemsSource="{Binding}" MouseDoubleClick="listView_MouseDoubleClick">
+            <ListView.View>
+              <GridView>
+                <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Path=ID}" />
+                <GridViewColumn Header="用户" Width="140" DisplayMemberBinding="{Binding Path=Name}" />
+                                <GridViewColumn Header="赛道名称" Width="190" DisplayMemberBinding="{Binding Path=TrackName}" />
+                                <GridViewColumn Header="开始时间" Width="194" DisplayMemberBinding="{Binding Path=Time1}" />
+                                <GridViewColumn Header="训练时间(s)" Width="143" DisplayMemberBinding="{Binding Path=Time2}" />
+                                <GridViewColumn Header="训练距离(km)" Width="143" DisplayMemberBinding="{Binding Path=Distance}" />
+                                <GridViewColumn Header="平均速度km/h" Width="188" DisplayMemberBinding="{Binding Path=Velocity}" />
+              </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+              <ContextMenu>
+                <MenuItem Header="删除" Click="RecordDelete_Click" />
+              </ContextMenu>
+            </ListView.ContextMenu>
+          </ListView>
+        </Grid>
+      </TabItem>
+    </TabControl>
+    <TextBlock Name="textBlock" HorizontalAlignment="Left" Margin="12,10,0,0" Text=" 骑行记录" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FF1EADFA" VerticalAlignment="Top" Height="29" Width="91" Opacity="0.8" Background="{x:Null}" />
+  </Grid>
+</Page>

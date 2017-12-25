@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Bike.Trainings.NormalPage" Title="NormalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:p="http://oxyplot.org/wpf">
+  <Grid>
+    <Grid.Background>
+      <ImageBrush ImageSource="/Bike;component/Images/background2.jpg" Stretch="Fill" />
+    </Grid.Background>
+    <TabControl Name="tabControl" Height="586" Margin="12,17,0,0" Opacity="0.85" Background="#FF000000" Width="804" BorderThickness="0" HorizontalAlignment="Left">
+      <TabItem Header="普通训练" FontSize="20" FontFamily="STKaiti" Foreground="#FF2C179D" Visibility="Collapsed">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="348" />
+            <RowDefinition Height="125" />
+            <RowDefinition Height="110" />
+          </Grid.RowDefinitions>
+          <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="328" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="km" Grid.Row="0" HorizontalAlignment="Left" Margin="7,4,0,0" Text=" km/h" TextBlock.FontSize="16" TextBlock.FontFamily="STKaiti" TextBlock.Foreground="#FFFFFFFF" Background="#FF000000" VerticalAlignment="Top" Height="31" Width="94" />
+              <TextBox Name="textBox1" Grid.Row="1" HorizontalAlignment="Left" Height="300" Margin="17,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" BorderThickness="0">
+                <TextBox.Background>
+                  <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="Black" />
+                    <GradientStop Color="#FF3D95C8" Offset="1" />
+                    <GradientStop Color="#FF19272F" />
+                  </LinearGradientBrush>
+                </TextBox.Background>
+              </TextBox>
+              <TextBox Name="textBox2" HorizontalAlignment="Left" Height="53" Margin="48,262,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Background="#FF0A0A63" BorderThickness="0" />
+              <p:Plot Name="speedChar" Grid.Row="1" Width="380" Height="300" HorizontalAlignment="Left" Margin="11,0,0,0" Opacity="0.8" Background="{x:Null}">
+                                <p:Plot.Axes>
+                                    <p:LinearAxis Position="Left" Minimum="0" Maximum="150" TextColor="White" />
+                                    <p:LinearAxis Position="Bottom" Title="T (s)" TitlePosition="0.9" TitleColor="White" TextColor="White" />
+                </p:Plot.Axes>
+                                <p:Plot.Series>
+                                    <p:LineSeries ItemsSource="{Binding SpeedDataList}" Background="{x:Null}" />
+                </p:Plot.Series>
+              </p:Plot>
+            </Grid>
+            <Grid Grid.Column="1">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="328" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="W" Grid.Row="0" HorizontalAlignment="Left" Margin="7,4,0,0" Text=" w" TextBlock.FontSize="16" TextBlock.FontFamily="STKaiti" TextBlock.Foreground="#FFFFFFFF" Background="#FF000000" VerticalAlignment="Top" Height="31" Width="94" />
+              <TextBox Name="textBox" Grid.Row="1" HorizontalAlignment="Left" Height="300" Margin="1,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" BorderThickness="0">
+                <TextBox.Background>
+                  <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="Black" />
+                    <GradientStop Color="#FF3D95C8" Offset="1" />
+                    <GradientStop Color="#FF19272F" />
+                  </LinearGradientBrush>
+                </TextBox.Background>
+              </TextBox>
+              <TextBox Name="textBox3" HorizontalAlignment="Left" Height="53" Margin="32,262,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Background="#FF0A0A63" BorderThickness="0" />
+                            <p:Plot Name="powerChar" Grid.Row="1" Width="380" Height="300" HorizontalAlignment="Left" Margin="-5,0,0,0" Opacity="0.8" Background="{x:Null}">
+                                <p:Plot.Axes>
+                                    <p:LinearAxis Position="Left" TextColor="White" AxislineColor="White" />
+                                    <p:LinearAxis Position="Bottom" Title="T (s)" TitlePosition="0.9" TitleColor="White" TextColor="White" AxislineColor="White" />
+                </p:Plot.Axes>
+                                <p:Plot.Series>
+                                    <p:LineSeries ItemsSource="{Binding PowerDataList}" Background="{x:Null}" />
+                </p:Plot.Series>
+              </p:Plot>
+            </Grid>
+          </Grid>
+          <Grid Grid.Row="1">
+            <Grid.Background>
+              <ImageBrush ImageSource="/Bike;component/Images/sjbj3.0.png" Stretch="None" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="8" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="29" />
+                <RowDefinition Height="80" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="Speed" Grid.Row="0" HorizontalAlignment="Center" Text="速度" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" Height="31" Width="50" Opacity="0.8" VerticalAlignment="Top" Margin="0,4,0,0" />
+              <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Width="150" Margin="0,0,0,8">
+                  <Label.Background>
+                    <ImageBrush ImageSource="/Bike;component/Images/bk3.0.png" Stretch="Uniform" />
+                  </Label.Background>
+                  <Grid Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="82" />
+                      <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="speedText" Grid.Column="0" Width="200" TextBlock.FontSize="29" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="10,15,0,0" TextBlock.FontFamily="Microsoft Sans Serif">000.0</TextBlock>
+                    <TextBlock Name="kmh" Grid.Column="1" Width="200" TextBlock.FontSize="14" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="10,40,0,0" TextBlock.FontFamily="Microsoft YaHei UI">km/h</TextBlock>
+                  </Grid>
+                </Label>
+              </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="80" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="Power" Grid.Row="0" HorizontalAlignment="Center" Text="功率" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" VerticalAlignment="Top" Height="29" Width="50" Opacity="0.8" Margin="55,4,55,0" Grid.RowSpan="2" />
+              <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Width="150">
+                  <Label.Background>
+                    <ImageBrush ImageSource="/Bike;component/Images/bk3.0.png" Stretch="Uniform" />
+                  </Label.Background>
+                  <Grid Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="100" />
+                      <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="powerText" Grid.Column="0" Width="200" TextBlock.FontSize="29" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="12,15,0,0" TextBlock.FontFamily="Microsoft Sans Serif">0000.0</TextBlock>
+                    <TextBlock Name="w" Grid.Column="1" Width="200" TextBlock.FontSize="14" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="8,40,0,0" TextBlock.FontFamily="Microsoft YaHei UI">w</TextBlock>
+                  </Grid>
+                </Label>
+              </StackPanel>
+            </Grid>
+            <Grid Grid.Column="3">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="80" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="Distance" Grid.Row="0" HorizontalAlignment="Center" Text="距离" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" VerticalAlignment="Top" Height="31" Width="70" Opacity="0.8" Margin="0,4,0,0" />
+              <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Width="150">
+                  <Label.Background>
+                    <ImageBrush ImageSource="/Bike;component/Images/bk3.0.png" Stretch="Uniform" />
+                  </Label.Background>
+                  <Grid Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="100" />
+                      <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="distanceText" Grid.Column="0" Width="200" TextBlock.FontSize="29" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="8,15,0,0" TextBlock.FontFamily="Microsoft Sans Serif">1000.0</TextBlock>
+                    <TextBlock Name="Km" Grid.Column="1" Width="200" TextBlock.FontSize="14" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="1,40,0,0" TextBlock.FontFamily="Microsoft YaHei UI">km</TextBlock>
+                  </Grid>
+                </Label>
+              </StackPanel>
+            </Grid>
+            <Grid Grid.Column="4">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="80" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="Energy" Grid.Row="0" HorizontalAlignment="Center" Text="能量" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" VerticalAlignment="Top" Height="31" Width="63" Opacity="0.8" Margin="0,4,0,0" />
+              <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Width="150">
+                  <Label.Background>
+                    <ImageBrush ImageSource="/Bike;component/Images/bk3.0.png" Stretch="Uniform" />
+                  </Label.Background>
+                  <Grid Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="100" />
+                      <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="energyText" Grid.Column="0" Width="200" TextBlock.FontSize="29" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="8,15,0,0" TextBlock.FontFamily="Microsoft Sans Serif">1000.0</TextBlock>
+                    <TextBlock Name="Kcal" Grid.Column="1" Width="100" TextBlock.FontSize="14" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="1,40,0,0" TextBlock.FontFamily="Microsoft YaHei UI">Kcal</TextBlock>
+                  </Grid>
+                </Label>
+              </StackPanel>
+            </Grid>
+            <Grid Grid.Column="5">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="80" />
+              </Grid.RowDefinitions>
+              <TextBlock Name="Time" Grid.Row="0" HorizontalAlignment="Center" Text="时间    h:m:s" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" VerticalAlignment="Top" Height="20" Width="120" Opacity="0.8" Margin="0,4,0,0" />
+              <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Width="150">
+                  <Label.Background>
+                    <ImageBrush ImageSource="/Bike;component/Images/bk3.0.png" Stretch="Uniform" />
+                  </Label.Background>
+                  <TextBlock Name="timeText" Width="200" TextBlock.FontSize="29" VerticalAlignment="Center" TextBlock.Foreground="#FFFFFFFF" Margin="15,15,0,0" TextBlock.FontFamily="Microsoft Sans Serif">00:00:00</TextBlock>
+                </Label>
+              </StackPanel>
+            </Grid>
+          </Grid>
+          <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="3.5*" />
+              <ColumnDefinition Width="2.5*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,0,0">
+              <Button Name="Start" Width="130" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontFamily="Microsoft YaHei UI" FontSize="15.7" Foreground="#FFFFFFFF" BorderBrush="{x:Null}" Click="Start_Click">
+                <Button.Background>
+                  <ImageBrush ImageSource="/Bike;component/Images/AN3.0.png" Stretch="Fill" />
+                </Button.Background>
+                <Button.Style>
+                  <Style TargetType="{x:Type Button}">
+                    <Setter Property="Control.Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                          <Border Background="{TemplateBinding Control.Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                          </Border>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </Button.Style>
+              </Button>
+            </StackPanel>
+            <StackPanel Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,55,0">
+              <Button Name="Stop" Width="130" Height="45" FontFamily="Microsoft YaHei UI" FontSize="15.7" Foreground="#FFFFFFFF" BorderBrush="{x:Null}" Click="Stop_Click">
+                <Button.Background>
+                  <ImageBrush ImageSource="/Bike;component/Images/AN3.0.png" Stretch="Fill" />
+                </Button.Background>
+                <Button.Style>
+                  <Style TargetType="{x:Type Button}">
+                    <Setter Property="Control.Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                          <Border Background="{TemplateBinding Control.Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                          </Border>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </Button.Style>
+              </Button>
+            </StackPanel>
+            <Button Name="Add" Grid.Column="3" Width="60" Height="60" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="Add_Click">
+              <Image Source="/Bike;component/Images/+3.0.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" />
+              <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Setter Property="Control.Template">
+                    <Setter.Value>
+                      <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Control.Background}">
+                          <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                      </ControlTemplate>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </Button.Style>
+            </Button>
+            <StackPanel Grid.Column="2" Width="126" Height="81" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0.2,23,0.2,16.8">
+              <TextBlock Name="gearText" TextBlock.FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Height="88" Margin="27,0,26.8,0" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Arial">5</TextBlock>
+            </StackPanel>
+            <Button Name="Miuns" Grid.Column="1" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Minus_Click">
+              <Image Source="/Bike;component/Images/-3.0.png" Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="Fant" RenderOptions.ClearTypeHint="Enabled" />
+              <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Setter Property="Control.Template">
+                    <Setter.Value>
+                      <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Control.Background}">
+                          <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                      </ControlTemplate>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </Button.Style>
+            </Button>
+          </Grid>
+        </Grid>
+      </TabItem>
+    </TabControl>
+    <TextBlock Name="textBlock" HorizontalAlignment="Left" Margin="12,10,0,0" Text=" 功率训练" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.FontSize="15.7" TextBlock.Foreground="#FF1EADFA" Background="#FF000000" VerticalAlignment="Top" Height="31" Width="91" Opacity="0.8" />
+  </Grid>
+</Page>

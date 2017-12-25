@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{062D9133-3E63-4DCE-ADE9-808248378A18}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Bike</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Bike</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="ANT_NET">
+      <HintPath>depend\ANT_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ANT+ProfileLib">
+      <HintPath>depend\ANT+ProfileLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="OxyPlot">
+      <HintPath>depend\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="OxyPlot.Wpf">
+      <HintPath>depend\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FinalClient\Connection.cs" />
+    <Compile Include="FinalClient\CustomProtocol.cs" />
+    <Compile Include="FinalClient\ProtocolBase.cs" />
+    <Compile Include="FinalClient\TrainingData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="core\ANT_heart_rate.cs" />
+    <Compile Include="controls\DifficultyControl.cs" />
+    <Compile Include="controls\InputVedio.cs" />
+    <Compile Include="controls\RateShowWindow.cs" />
+    <Compile Include="other\BpmWindow.cs" />
+    <Compile Include="other\ChartWindow.cs" />
+    <Compile Include="other\DevicesPage.cs" />
+    <Compile Include="other\GeneralWindow.cs" />
+    <Compile Include="other\InformationWindow.cs" />
+    <Compile Include="other\IntelligentWindow.cs" />
+    <Compile Include="other\RecordPage.cs" />
+    <Compile Include="other\RegisterWindow.cs" />
+    <Compile Include="other\RejisterPage.cs" />
+    <Compile Include="other\RidingData.cs" />
+    <Compile Include="other\RpmWindow.cs" />
+    <Compile Include="other\SaveWindow.cs" />
+    <Compile Include="other\SearchData.cs" />
+    <Compile Include="other\SearchWindow.cs" />
+    <Compile Include="other\SettingPage.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="trainings\NormalPage.cs" />
+    <Compile Include="trainings\U3DPage.cs" />
+    <Compile Include="trainings\Video.cs" />
+    <Compile Include="trainings\VideoPage.cs" />
+    <Compile Include="trainings\VideoWindow.cs" />
+    <Compile Include="core\ANT.cs" />
+    <Compile Include="core\ANT_TAPING.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="core\Device.cs" />
+    <Compile Include="core\GlobalData.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="core\MultiLanguage.cs" />
+    <Compile Include="core\UdpCore.cs" />
+    <Compile Include="core\UTCTimeOperate.cs" />
+    <Compile Include="core\XMLHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\+.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\+3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\-.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\-3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\00.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\05.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\10.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\111.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\112.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\add.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\add_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\an3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ant+.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background3.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background6.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bk.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bk3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\blue.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bluetooth1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bluetooth2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\bluetooth_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\cancel.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\check.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\device.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\device1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\device2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\device3.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\device4.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\device_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\distance.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\dl.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\dl1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\energy.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\energy1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\gl.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\glj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\gonglv1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\gonglv2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\heartrate.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ico.ico">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ico_uh.ico">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ico_uh2.ico">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ico_uhtest.ico">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\input.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\jilu1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\jilu2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\left.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\logo.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\minus.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\minus_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\nomal1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\nomal2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\noraml.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\noraml_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\note.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\note2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\note3.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\other.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\pause.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\pause1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\pause_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\power.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\pt.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\pt2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\putong.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\qxt.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\record.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\record1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\record_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sb.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sb1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sb2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sdj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\search.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sebei1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sebei2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\setting.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\setting_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\shijing1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\shijing2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sj1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sj2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sjbj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sjbj2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\sjbj3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\slope.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\speed.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\start.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\start1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\start_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\stop.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\stop1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\stop_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\tapin.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\tb.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\tb1.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\time.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\tpq.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\tramp.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\t_logo.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\unity3d.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\unity3d_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\video.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\video_red.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\warning.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\x3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xinlv.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xl.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xl2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xlj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xnbj.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xnbj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xnbj2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xuni1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\xuni2.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\zb.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\zb1.jpg">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\zcbj.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\zhineng.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\zm.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\zm2.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\_3.0.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="app.xaml" />
+    <Page Include="controls\difficultycontrol.xaml" />
+    <Page Include="controls\rateshowwindow.xaml" />
+    <Page Include="mainwindow.xaml" />
+    <Page Include="other\bpmwindow.xaml" />
+    <Page Include="other\chartwindow.xaml" />
+    <Page Include="other\devicepage.xaml" />
+    <Page Include="other\generalwindow.xaml" />
+    <Page Include="other\informationwindow.xaml" />
+    <Page Include="other\intelligentwindow.xaml" />
+    <Page Include="other\recordpage.xaml" />
+    <Page Include="other\registerwindow.xaml" />
+    <Page Include="other\rejisterpage.xaml" />
+    <Page Include="other\rpmwindow.xaml" />
+    <Page Include="other\savewindow.xaml" />
+    <Page Include="other\searchwindow.xaml" />
+    <Page Include="other\settingpage.xaml" />
+    <Page Include="styles.xaml" />
+    <Page Include="trainings\normalpage.xaml" />
+    <Page Include="trainings\u3dpage.xaml" />
+    <Page Include="trainings\videopage.xaml" />
+    <Page Include="trainings\videowindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\noraml%2520%282%29.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\noraml%2520%282%291.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\video%2520%282%29.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\video%2520%282%291.png">
+      <CustomToolNamespace>UHfitness.g.resources</CustomToolNamespace>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="Bike.Other.IntelligentWindow" Title="IntelligentWindow" Height="648" Width="830" WindowStyle="None" MinWidth="830" MinHeight="648" MaxWidth="830" MaxHeight="648" ResizeMode="NoResize" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid>
+    <Grid.Background>
+      <ImageBrush ImageSource="/Bike;component/Images\background6.png" Stretch="None" />
+    </Grid.Background>
+    <TextBlock Name="Peizhi" HorizontalAlignment="Left" Margin="244,115,0,0" TextWrapping="Wrap" Text="配置设备" VerticalAlignment="Top" Width="328" Height="42" TextBlock.FontSize="26" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" TextBlock.TextAlignment="Center" />
+    <TextBlock HorizontalAlignment="Left" Margin="177,204,0,0" TextWrapping="Wrap" Text="————————————————————————————————————————————————" VerticalAlignment="Top" Height="22" Width="475" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBlock HorizontalAlignment="Left" Margin="175,476,0,0" TextWrapping="Wrap" Text="————————————————————————————————————" VerticalAlignment="Top" Height="24" Width="477" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBlock HorizontalAlignment="Left" Margin="47,320,0,0" TextWrapping="Wrap" Text="————————————————————————————————————————————————" VerticalAlignment="Top" Height="12" Width="284" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" RenderTransformOrigin="0.5,0.5">
+      <TextBlock.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform />
+          <SkewTransform AngleY="0.56" />
+          <RotateTransform Angle="-90" />
+          <TranslateTransform Y="-0.1" X="2.4" />
+        </TransformGroup>
+      </TextBlock.RenderTransform>
+    </TextBlock>
+    <TextBlock HorizontalAlignment="Left" Margin="513,319,0,0" TextWrapping="Wrap" Text="————————————————————————————————————————————————" VerticalAlignment="Top" Height="12" Width="284" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" RenderTransformOrigin="0.5,0.5">
+      <TextBlock.RenderTransform>
+        <TransformGroup>
+          <ScaleTransform />
+          <SkewTransform AngleY="0.56" />
+          <RotateTransform Angle="-90" />
+          <TranslateTransform Y="-0.1" X="2.4" />
+        </TransformGroup>
+      </TextBlock.RenderTransform>
+    </TextBlock>
+    <TextBlock Name="Intelligent1" HorizontalAlignment="Left" Margin="177,185,0,0" TextWrapping="Wrap" Text="智能骑行台" VerticalAlignment="Top" Width="117" Height="32" TextBlock.FontSize="18" TextBlock.Foreground="#FF1C98DD" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBlock Name="SerialBlock" HorizontalAlignment="Left" Margin="227,329,0,0" TextWrapping="Wrap" Text="序列号" VerticalAlignment="Top" Width="84" Height="24" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBlock Name="Intelligent2" HorizontalAlignment="Left" Margin="227,247,0,0" TextWrapping="Wrap" Text="智能骑行台" VerticalAlignment="Top" Width="84" Height="24" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBlock Name="TypeNumber" HorizontalAlignment="Left" Margin="512,277,0,0" TextWrapping="Wrap" Text="型号选择" VerticalAlignment="Top" Width="69" Height="24" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBox Name="BluetoothMAC" MaxLength="12" HorizontalAlignment="Left" Height="30" Margin="227,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontSize="15.7" MaxLines="1" FontFamily="Microsoft YaHei UI" VerticalContentAlignment="Center" />
+    <Button Name="Finish" Content="完成" HorizontalAlignment="Left" Margin="547,530,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.478,-0.33" Height="30" FontSize="15.7" BorderThickness="0" FontFamily="Microsoft YaHei UI" Foreground="#FFFFFFFF" Click="Finish_Click">
+      <Button.Background>
+        <ImageBrush ImageSource="/Bike;component/Images/AN3.0.png" Stretch="UniformToFill" />
+      </Button.Background>
+      <Button.Style>
+        <Style TargetType="{x:Type Button}">
+          <Setter Property="Control.Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Button.Style>
+    </Button>
+    <TextBlock HorizontalAlignment="Left" Margin="345,358,0,0" TextWrapping="Wrap" Text="————" VerticalAlignment="Top" Height="23" Width="37" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <TextBox Name="CRC16" HorizontalAlignment="Left" Height="30" Margin="372,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" UndoLimit="4" MaxLines="1" MaxLength="4" FontFamily="Microsoft YaHei UI" FontSize="15.7" VerticalContentAlignment="Center" />
+    <Image Name="LockState" HorizontalAlignment="Left" Height="23" Margin="461,358,0,0" VerticalAlignment="Top" Width="21" Source="/Bike;component/Images/cancel.png" />
+    <Button Name="Binding" Content="绑定" HorizontalAlignment="Left" Margin="497,353,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.478,-0.33" Height="30" FontSize="15.7" BorderThickness="0" FontFamily="Microsoft YaHei UI" Foreground="#FFFFFFFF" Click="Binding_Click">
+      <Button.Background>
+        <ImageBrush ImageSource="/Bike;component/Images/AN3.0.png" Stretch="UniformToFill" />
+      </Button.Background>
+      <Button.Style>
+        <Style TargetType="{x:Type Button}">
+          <Setter Property="Control.Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Button.Style>
+    </Button>
+    <ComboBox Name="SericalCom" HorizontalAlignment="Left" Margin="333,422,0,0" VerticalAlignment="Top" Width="109" Height="30" FontSize="15.7" FontFamily="Microsoft YaHei UI" ItemsSource="{Binding}" PreviewMouseDown="SericalCom_PreviewMouseDown" />
+    <Button Name="Connect" Content="连接" HorizontalAlignment="Left" Margin="497,422,0,0" VerticalAlignment="Top" Width="96" Height="30" BorderThickness="0" Foreground="#FFFFFFFF" FontFamily="Microsoft YaHei UI" FontSize="15.7" Click="Connet_Click">
+      <Button.Background>
+        <ImageBrush ImageSource="/Bike;component/Images/AN3.0.png" Stretch="UniformToFill" />
+      </Button.Background>
+      <Button.Style>
+        <Style TargetType="{x:Type Button}">
+          <Setter Property="Control.Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Border Background="{TemplateBinding Control.Background}">
+                  <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </Button.Style>
+    </Button>
+    <TextBlock Name="COMport" HorizontalAlignment="Left" Margin="227,423,0,0" TextWrapping="Wrap" Text="蓝牙端口" VerticalAlignment="Top" Width="67" Height="23" TextBlock.FontSize="15.7" TextBlock.Foreground="#FFFFFFFF" TextBlock.FontFamily="Microsoft YaHei UI" />
+    <ComboBox Name="IntelligentCOMport" HorizontalAlignment="Left" Margin="227,271,0,0" VerticalAlignment="Top" Width="215" Height="30" FontSize="15.7" FontFamily="Microsoft YaHei UI" ItemsSource="{Binding}" PreviewMouseDown="IntelligentCom_PreviewMouseDown" />
+  </Grid>
+</Window>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page x:Class="Bike.Other.SettingPage" Title="SettingPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Grid Background="#FFFFFFFF">
+    <TextBlock Name="textBlock" HorizontalAlignment="Left" Margin="284,262,0,0" TextWrapping="Wrap" Text="Under construction" VerticalAlignment="Top" Height="70" Width="287" TextBlock.FontSize="26.667" />
+  </Grid>
+</Page>
